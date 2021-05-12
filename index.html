@@ -12,37 +12,66 @@
     <div class="container">
     
         <header>
-             <!-- -->
+             <!-- <br> not effect-->
         </header>
         
         <main>
             <div class="content-tengah">
                  <div class="col-right">
                           <section class="margin-content-tengah-right-padding">
-                              <br>
-                              <p id="outputJs"></p>
-                              <p id="outputJsDua"></p>
-                              <p id="outputJsTiga"></p> 
-                              <p>console.log('keyup:', event.type, handler, handler.key);</p>
-                              <p>[b][a][w][ctrl + a][alt + a + s][ctrl + s][ctrl + c][ctrl + v]</p>
-                              <br>
-                              <p>JANGAN TEKAN</p>
-                              <p>ctrl + w</p>
+                                <h1>LOOK CONSOLE LOG -  Developer Mode </h1>
+
+                                <pre>
+                                
+                                </pre>
+
+                                <div id="atas">
+                                    <p>Kondisi gelas yang ditemukan : </p>
+                                    <select id="kondisi">
+                                        <option value="satuGelas">1x Gelas (Ukuran 200ml)</option>
+                                        <option value="duaGelas">2x Gelas (Ukuran 100ml)</option>
+                                    </select>
+
+                                    <pre>
+                                    
+                                    </pre>
+
+                                    <button id = "btnStart" type="button" onclick="funcStart()">START</button>
+                                    <button id = "btnReset" type="button" onclick="funcReset()">RESET</button>
+                                    <button id = "btnNext" type="button" onclick="funcNext()">NEXT</button>
+                                </div>
+
+                                <pre>
+                                  
+                                </pre>
+
+                                <div id="bawah">
+                                    <p id="outputJs"></p>
+                                    <p id="outputJsDua"></p>
+                                    <p id="outputJsTiga"></p>
+
+                                    <pre>
+                                  
+                                    </pre>
+
+                                    <pre id="statusJSON">statusJSON</pre> 
+                                </div> 
+
+
                           </section>
                  </div>
                  <div class="col-left">
                           <section class="margin-content-tengah-left-padding">
-                              <h1>LOOK CONSOLE LOG -  Developer Mode </h1>
+                              
                               
                               <div class="posCanvas">
-                                <div class="box1">                              
-                                            <img class="imgElement" src="./images/png-bg.png" width="2970" height="1620">
-
-                                            <canvas class="canvasClass" id="canvas" width="732" height="400"></canvas>
-                                </div>
+                                  <div class="box1">
+                                      <!-- 415 - 315 -->
+                                      <!-- 815 - 515 -->
+                                      <img class="imgElement" src="./images/png-bg2.png" width="815" height="515">
+                                      <canvas class="canvasClass" id="canvas" width="815" height="515"></canvas>
+                                  </div>
                               </div>
-
-
                                    
                                    <!-- https://stackoverflow.com/questions/46503249/color-input-with-transparency/46503350 -->
                               
@@ -51,7 +80,7 @@
             </div>
             <div class="cR-bawah">
                <section class="copyRight">
-                        <p>copyright &copy; studio.pipeLAne.domain</p>
+                        <p>copyright &copy; LITBANG UNITAS 2020/2021</p>
                </section>
             </div>
         </main>

@@ -143,7 +143,7 @@ var interval;
 var canvas = document.getElementById("canvas"); 
 var context = canvas.getContext("2d"); 
 
-var rect={ x:0, y:0, width:732, height:400 };
+var rect={ x:0, y:0, width:canvas.width, height:canvas.height };
 var mousePos;
 var message;
 
@@ -154,13 +154,13 @@ var img = new Image();
 function draw() {   // melakukan pengulangan untuk menggambar
     
     context.fillStyle = 'white';  // warna background putih
-    context.fillRect( rect.x, rect.y, rect.width, 300 );  // background
+    context.fillRect( rect.x, rect.y, rect.width, rect.height );  // background
 
     context.drawImage(img, 0, 0, rect.width, rect.height);
 
     context.fillStyle = "black"; // warna font
     context.fillText(message, 10, 25); // font
-    context.font = '10px san-serif';
+    context.font = '15px san-serif';
 
 };
 
@@ -189,6 +189,33 @@ if (modeDrag !== true) {
 //--- End --- dipancing melakukan Event --
 
 
+
+
+//--- Start --- bawah Status
+var data = { 
+    Status : {
+        gelasA: "Air Kopi",
+        gelasB: "Air Bening",
+        gelasC: null,
+        gelasD: null,
+        gelasE: null
+    }
+};
+
+var dataJson = JSON.stringify(data, null, 2);
+
+document.getElementById("statusJSON").innerHTML = dataJson;
+//--- End --- bawah Status
+
+
+//--- Start --- atas Kondisi
+
+var elemKondisi = document.getElementById("kondisi");
+var valueKondisi = elemKondisi.value;
+
+//document.getElementById("statusJSON").innerHTML = valueKondisi;
+
+//--- End --- atas Kondisi
 
 
 
