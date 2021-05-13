@@ -12,7 +12,7 @@
     <div class="container">
     
         <header>
-             <!-- <br> not effect-->
+             <!-- <br> - enter biasa-->
         </header>
         
         <main>
@@ -31,30 +31,22 @@
                                         <option value="satuGelas">1x Gelas (Ukuran 200ml)</option>
                                         <option value="duaGelas">2x Gelas (Ukuran 100ml)</option>
                                     </select>
-
-                                    <pre>
-                                    
-                                    </pre>
+                                    <br>
 
                                     <button id = "btnStart" type="button" onclick="funcStart()">START</button>
-                                    <button id = "btnReset" type="button" onclick="funcReset()">RESET</button>
+                                    <button id = "btnStopReset" type="button" onclick="funcStopReset()">STOP & RESET</button>
                                     <button id = "btnNext" type="button" onclick="funcNext()">NEXT</button>
                                 </div>
 
-                                <pre>
-                                  
-                                </pre>
-
                                 <div id="bawah">
+
+                                    <br>
+                                    <!-- <p id="statusGelas">statusGelas</p> -->
+                                    <pre id="statusJSON">statusJSON</pre> 
                                     <p id="outputJs"></p>
                                     <p id="outputJsDua"></p>
                                     <p id="outputJsTiga"></p>
 
-                                    <pre>
-                                  
-                                    </pre>
-
-                                    <pre id="statusJSON">statusJSON</pre> 
                                 </div> 
 
 
@@ -66,10 +58,10 @@
                               
                               <div class="posCanvas">
                                   <div class="box1">
-                                      <!-- 415 - 315 -->
-                                      <!-- 815 - 515 -->
-                                      <img class="imgElement" src="./images/png-bg2.png" width="815" height="515">
-                                      <canvas class="canvasClass" id="canvas" width="815" height="515"></canvas>
+                                      <!-- 375 - 275 -->
+                                      <!-- 775 - 475 -->
+                                      <img class="imgElement" src="./images/png-bg2.png" width="375" height="275">
+                                      <canvas class="canvasClass" id="canvas" width="375" height="275"></canvas>
                                   </div>
                               </div>
                                    

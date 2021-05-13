@@ -105,14 +105,14 @@
     
     .col-left{       /* dibelakang contentnya {1} */
         float: left;
-        width: 65%;
+        width: 60%;
         height: 100%; /* 100% horizontal dari ukuran didalam <tag> */
         background-color: #ffad7e;
     }
     
     .col-right{       /* dibelakang contentnya {1} */
         float: right;
-        width: 35%;
+        width: 40%;
         height: 100%; /* 100% horizontal dari ukuran didalam <tag> */
         background-color: #e3ff7e;
     }

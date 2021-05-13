@@ -162,6 +162,8 @@ function draw() {   // melakukan pengulangan untuk menggambar
     context.fillText(message, 10, 25); // font
     context.font = '15px san-serif';
 
+    statusUpdate();
+
 };
 
 interval = setInterval(draw, 800 / 60);  // pengulangan teruss
@@ -190,17 +192,58 @@ if (modeDrag !== true) {
 
 
 
+//--- Start --- atas Kondisi
+
+function statusUpdate() {
+    var elemKondisi = document.getElementById("kondisi");
+    //var valueKondisi = elemKondisi.value;
+
+    if (elemKondisi.value !== "satuGelas"){  
+        var data = { 
+            kondisGelas : elemKondisi.value,
+            status : {
+                gelasA: "Air Kopi",
+                gelasB: "Air Bening",
+                gelasD: null,
+                gelasE: null
+            }
+        };
+    }
+    else {
+        var data = { 
+            kondisGelas : elemKondisi.value,
+            status : {
+                gelasA: "Air Kopi",
+                gelasB: "Air Bening",
+                gelasC: null
+            }
+        };
+    }
+    
+    var dataJson = JSON.stringify(data, null, 2);
+
+    //document.getElementById("statusGelas").innerHTML = valueKondisi;
+    document.getElementById("statusJSON").innerHTML = dataJson;
+};
+
+//duaGelas
+//satuGelas
+//lihat data apa yang di-isi
+
+//--- End --- atas Kondisi
+
 
 //--- Start --- bawah Status
-var data = { 
-    Status : {
-        gelasA: "Air Kopi",
-        gelasB: "Air Bening",
-        gelasC: null,
-        gelasD: null,
-        gelasE: null
-    }
-};
+//var data = { 
+//    kondisGelas : elemKondisi.value,
+//    status : {
+//        gelasA: "Air Kopi",
+//        gelasB: "Air Bening",
+//        gelasC: null,
+//        gelasD: null,
+//        gelasE: null
+//    }
+//};
 
 var dataJson = JSON.stringify(data, null, 2);
 
@@ -208,14 +251,6 @@ document.getElementById("statusJSON").innerHTML = dataJson;
 //--- End --- bawah Status
 
 
-//--- Start --- atas Kondisi
-
-var elemKondisi = document.getElementById("kondisi");
-var valueKondisi = elemKondisi.value;
-
-//document.getElementById("statusJSON").innerHTML = valueKondisi;
-
-//--- End --- atas Kondisi
 
 
 
