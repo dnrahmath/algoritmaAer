@@ -162,6 +162,7 @@ function draw() {   // melakukan pengulangan untuk menggambar
     context.fillText(message, 10, 25); // font
     context.font = '15px san-serif';
 
+    statusAwal();
     statusUpdate();
 
 };
@@ -191,38 +192,48 @@ if (modeDrag !== true) {
 //--- End --- dipancing melakukan Event --
 
 
-
 //--- Start --- atas Kondisi
+var elemKondisi = document.getElementById("kondisi");
 
-function statusUpdate() {
-    var elemKondisi = document.getElementById("kondisi");
+var varGelasA = "Air Kopi";
+var varGelasB = "Air Bening";
+var varGelasC = null;
+var varGelasD = null;
+var varGelasE = null;
+
+function statusAwal() {
+    //var elemKondisi = document.getElementById("kondisi");
     //var valueKondisi = elemKondisi.value;
 
+    //--- Start --- Options
     if (elemKondisi.value !== "satuGelas"){  
+
         var data = { 
             kondisGelas : elemKondisi.value,
             status : {
-                gelasA: "Air Kopi",
-                gelasB: "Air Bening",
-                gelasD: null,
-                gelasE: null
+                gelasA: varGelasA,
+                gelasB: varGelasB,
+                gelasD: varGelasD,
+                gelasE: varGelasE
             }
         };
+
     }
     else {
+
         var data = { 
             kondisGelas : elemKondisi.value,
             status : {
-                gelasA: "Air Kopi",
-                gelasB: "Air Bening",
-                gelasC: null
+                gelasA: varGelasA,
+                gelasB: varGelasB,
+                gelasC: varGelasC
             }
         };
+
     }
+    //--- End --- Options
     
     var dataJson = JSON.stringify(data, null, 2);
-
-    //document.getElementById("statusGelas").innerHTML = valueKondisi;
     document.getElementById("statusJSON").innerHTML = dataJson;
 };
 
@@ -232,28 +243,27 @@ function statusUpdate() {
 
 //--- End --- atas Kondisi
 
+//--- Start --- SimulasiUpdate
+var simulasiPoint = [
+    [48, 72, 96], 
+    [24, 48, 72]
+];
 
-//--- Start --- bawah Status
-//var data = { 
-//    kondisGelas : elemKondisi.value,
-//    status : {
-//        gelasA: "Air Kopi",
-//        gelasB: "Air Bening",
-//        gelasC: null,
-//        gelasD: null,
-//        gelasE: null
-//    }
-//};
+function statusUpdate() {
+    var gelasPoint;
+    var langkahPoint;
+    switch (elemKondisi.value) {
+        case "satuGelas":
+          gelasPoint = 0;
+          langkahPoint = 2; //pengulangan 0-2
+          varGelasA = simulasiPoint[gelasPoint][langkahPoint];
+          break;
+        case "duaGelas":
+          gelasPoint = 1;
+          langkahPoint = 2; //pengulangan 0-2
+          varGelasA = simulasiPoint[gelasPoint][langkahPoint];
+      }
 
-var dataJson = JSON.stringify(data, null, 2);
-
-document.getElementById("statusJSON").innerHTML = dataJson;
-//--- End --- bawah Status
-
-
-
-
-
-
+};
 
 //-canvas--------------------------------
