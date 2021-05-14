@@ -249,14 +249,17 @@ var simulasiPoint = [
     [24, 48, 72]
 ];
 
+var frame;
+
 function statusUpdate() {
     var gelasPoint;
     var langkahPoint;
     switch (elemKondisi.value) {
         case "satuGelas":
           gelasPoint = 0;
-          langkahPoint = 2; //pengulangan 0-2
-          varGelasA = simulasiPoint[gelasPoint][langkahPoint];
+          varGelasA = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
+          frame = 2; // bergerak bertambah terus jika belum sampai langkahPoint , looping img.src = img{frame}.png
+          langkahPoint = frame; //pengulangan 0-2 , pakai button NEXT
           break;
         case "duaGelas":
           gelasPoint = 1;
