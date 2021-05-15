@@ -256,7 +256,7 @@ var gelasPoint;
 var langkahPoint;
 var langkahPointSebelum;
 
-//var frameKe;
+var frameKe;
 var frameSebelum;
 
 var inter; //menyimpan interval
@@ -265,20 +265,24 @@ function statusUpdate() {
 
     
     switch (elemKondisi.value) {
+
         case "satuGelas":
           gelasPoint = 0;
-          langkahPoint = 3; //pengulangan 0-3 , pakai button NEXT
+          //--
+          langkahPoint = 2; //pengulangan 0-3 , pakai button NEXT
           langkahPointSebelum = langkahPoint - 1;
-          //frameKe = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
+          //--
+          frameKe = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
           frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
-          frame = 2; // bergerak bertambah terus jika belum sampai langkahPoint , looping img.src = img{frame}.png
-
           break;
+
         case "duaGelas":
           gelasPoint = 1;
-          langkahPoint = 3; //pengulangan 0-3
+          //--
+          langkahPoint = 2; //pengulangan 0-3 , pakai button NEXT
           langkahPointSebelum = langkahPoint - 1;
-          //frameKe = simulasiPoint[gelasPoint][langkahPoint];
+          //--
+          frameKe = simulasiPoint[gelasPoint][langkahPoint];
           frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
       }
     
@@ -305,7 +309,20 @@ function statusUpdate() {
 
 // ------------------------------------------------------------
 
-var angkaFrame = 0; //0
+//var angkaFrame = 0; //0
+
+
+
+
+
+//var cars = ["f","g","f","g","BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+//var array2d = [[3,6],[9,12]];
+//var panggil = array2d[0][1];
+//var text = "";
+
+
+
+/*
 
 function displayImg() {
 
@@ -320,20 +337,35 @@ function displayImg() {
      }
 
 };
-
+*/
 
 function btnStart() {
 
-    inter = setInterval(displayImg, 1000/24);  // 1 detik = 24 frame 
+    //inter = setInterval(displayImg, 1000/24);  // 1 detik = 24 frame 
 
-    /*
-    var i = 0;
-    while (i < titikBerhenti) {
-      frame += 1;
-      console.log(frame); 
-      i++;
+    //var i = 0; //angkaFrame
+    var i = frameSebelum; //angkaFrame , value array didapatkan lalu disimpan di variabel
+
+    function frameLooping() {
+
+        inter = setTimeout(function() {
+
+            console.log(frameKe);
+            console.log(frameSebelum); 
+            console.log(i);
+            //console.log(simulasiPoint[gelasPoint][langkahPoint]);
+
+            i++;
+
+            if (i <= frameKe) {
+                frameLooping();
+            }
+
+        }, 24000/24);
+
     }
-    */
+
+    frameLooping();
 
 };
 document.getElementById("btnStart").onclick = function() {btnStart()};
