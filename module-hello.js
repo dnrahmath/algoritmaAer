@@ -249,6 +249,7 @@ var simulasiPoint = [
     [0, 24, 48, 72]
 ];
 
+
 var frame;
 
 var gelasPoint;
@@ -262,6 +263,7 @@ var inter; //menyimpan interval
 
 function statusUpdate() {
 
+    
     switch (elemKondisi.value) {
         case "satuGelas":
           gelasPoint = 0;
@@ -279,6 +281,25 @@ function statusUpdate() {
           //frameKe = simulasiPoint[gelasPoint][langkahPoint];
           frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
       }
+    
+    
+    /*
+      if (elemKondisi.value == "satuGelas") {
+        gelasPoint = 0;
+        langkahPoint = 3; //pengulangan 0-3 , pakai button NEXT
+        langkahPointSebelum = langkahPoint - 1;
+        //frameKe = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
+        frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
+        frame = 2; // bergerak bertambah terus jika belum sampai langkahPoint , looping img.src = img{frame}.png
+      }
+      else {
+        gelasPoint = 1;
+        langkahPoint = 3; //pengulangan 0-3
+        langkahPointSebelum = langkahPoint - 1;
+        //frameKe = simulasiPoint[gelasPoint][langkahPoint];
+        frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
+      }
+    */
 
 };
 
@@ -287,14 +308,15 @@ function statusUpdate() {
 var angkaFrame = 0; //0
 
 function displayImg() {
-    
-    if (angkaFrame == simulasiPoint[gelasPoint][langkahPoint] ) {
+
+    if (angkaFrame == frameSebelum ) { //!==
         clearInterval(inter);
       }
       else {
-         angkaFrame = angkaFrame + 1 ; 
-         console.log(frameSebelum); 
-         console.log(angkaFrame); 
+        angkaFrame = angkaFrame + 1 ; 
+        console.log(frameSebelum); 
+        console.log(angkaFrame);
+        console.log(simulasiPoint[gelasPoint][langkahPoint]);
      }
 
 };
