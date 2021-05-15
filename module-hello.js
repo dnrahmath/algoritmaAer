@@ -245,28 +245,93 @@ function statusAwal() {
 
 //--- Start --- SimulasiUpdate
 var simulasiPoint = [
-    [48, 72, 96], 
-    [24, 48, 72]
+    [0, 48, 72, 96], 
+    [0, 24, 48, 72]
 ];
 
 var frame;
 
+var gelasPoint;
+var langkahPoint;
+var langkahPointSebelum;
+
+//var frameKe;
+var frameSebelum;
+
+var inter; //menyimpan interval
+
 function statusUpdate() {
-    var gelasPoint;
-    var langkahPoint;
+
     switch (elemKondisi.value) {
         case "satuGelas":
           gelasPoint = 0;
-          varGelasA = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
+          langkahPoint = 3; //pengulangan 0-3 , pakai button NEXT
+          langkahPointSebelum = langkahPoint - 1;
+          //frameKe = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
+          frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
           frame = 2; // bergerak bertambah terus jika belum sampai langkahPoint , looping img.src = img{frame}.png
-          langkahPoint = frame; //pengulangan 0-2 , pakai button NEXT
+
           break;
         case "duaGelas":
           gelasPoint = 1;
-          langkahPoint = 2; //pengulangan 0-2
-          varGelasA = simulasiPoint[gelasPoint][langkahPoint];
+          langkahPoint = 3; //pengulangan 0-3
+          langkahPointSebelum = langkahPoint - 1;
+          //frameKe = simulasiPoint[gelasPoint][langkahPoint];
+          frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
       }
 
 };
+
+// ------------------------------------------------------------
+
+var angkaFrame = 0; //0
+
+function displayImg() {
+    
+    if (angkaFrame == simulasiPoint[gelasPoint][langkahPoint] ) {
+        clearInterval(inter);
+      }
+      else {
+         angkaFrame = angkaFrame + 1 ; 
+         console.log(frameSebelum); 
+         console.log(angkaFrame); 
+     }
+
+};
+
+
+function btnStart() {
+
+    inter = setInterval(displayImg, 1000/24);  // 1 detik = 24 frame 
+
+    /*
+    var i = 0;
+    while (i < titikBerhenti) {
+      frame += 1;
+      console.log(frame); 
+      i++;
+    }
+    */
+
+};
+document.getElementById("btnStart").onclick = function() {btnStart()};
+
+
+function btnStopReset() {
+    clearInterval(inter);
+};
+document.getElementById("btnStopReset").onclick = function() {btnStopReset()};
+
+
+function btnNext() {
+    
+};
+
+
+
+// ------------------------------------------------------------
+
+
+
 
 //-canvas--------------------------------
