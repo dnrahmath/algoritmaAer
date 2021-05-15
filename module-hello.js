@@ -350,9 +350,9 @@ function btnStart() {
 
         inter = setTimeout(function() {
 
-            console.log(frameKe);
             console.log(frameSebelum); 
             console.log(i);
+            console.log(frameKe);
             //console.log(simulasiPoint[gelasPoint][langkahPoint]);
 
             i++;
