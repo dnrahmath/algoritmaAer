@@ -1,0 +1,8 @@
+sumber file dari Google Drive
+https://drive.google.com/file/d/15FFfQ6rVD6ML6kqcaA9H_vdNZ2quYI3S/view?usp=sharing
+
+[+] github support upload file max 100 file.
+Yowza, that’s a lot of files. Try again with fewer than 100 files.
+
+[+] github support upload file max 25MB.
+Yowza, that’s a big file. Try again with a file smaller than 25MB.
