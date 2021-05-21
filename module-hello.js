@@ -352,6 +352,7 @@ function btnStart() {
 
             console.log(frameSebelum); 
             console.log(i);
+            document.getElementById("frameNumber").innerHTML = i;
             console.log(frameKe);
             //console.log(simulasiPoint[gelasPoint][langkahPoint]);
 
@@ -361,7 +362,7 @@ function btnStart() {
                 frameLooping();
             }
 
-        }, 24000/24);
+        }, 1000/6);  // 6 fps
 
     }
 
