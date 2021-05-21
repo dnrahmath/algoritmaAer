@@ -1,8 +1,6 @@
 export class loadJSON {
     constructor() {
-        //this.contact;
-        //this.memberfilter;
-        //this.jsonText;
+      //---------------
     }
     present() {
         var contact;
@@ -17,22 +15,6 @@ export class loadJSON {
         var objTiga;
 
         
-        //GAGAL
-        /*
-        mfDua=[];
-        mfDua[0].push(["f0-layer0","f0-layer1","f0-layer3",]);
-        mfDua[1].push(["f1-layer0","f1-layer1","f1-layer3",]);
-        */
-
-      /*-------------------------------------------*/
-
-      /*
-      var ArrInhTigaData=[];  //DataIMG-Array_Paling_Dalam
-      ArrInhTigaData.push('DataIMG0-Ke0'); //0
-      ArrInhTigaData.push('DataIMG0-Ke1'); //1
-      ArrInhTigaData.push('DataIMG0-Ke2'); //2
-      */
-
       var x,y,z;
       x = "Data1";
       y = "Data2";
@@ -46,16 +28,9 @@ export class loadJSON {
 
       var ArrFrame= [];  //DataFrame + DataLayer[Layer][IMGData]
       ArrFrame.push(['| Layer0 |',ArrDataImg[0][3],ArrDataImg[1][3],ArrDataImg[2][3],ArrDataImg[3][3]]);  //langsung ke data ke3 untuk update URL
-    //ArrInhSatuFrame.push(['| frame1 |',ArrInhDuaLayerF1[0][3],ArrInhDuaLayerF1[1][3],ArrInhDuaLayerF1[2][3],ArrInhDuaLayerF1[3][3]]);  //INI-HARUS-BEDA-NamaArrayNYA
-    //ArrInhSatuFrame.push(['| frame2 |',ArrInhDuaLayerF2[0][3],ArrInhDuaLayerF2[1][3],ArrInhDuaLayerF2[2][3],ArrInhDuaLayerF2[3][3]]);  //INI-HARUS-BEDA-NamaArrayNYA
-      //ArrInhSatuFrame.push(['| frame3 |',ArrInhDuaLayer[0][3],ArrInhDuaLayer[1][3],ArrInhDuaLayer[2][3],ArrInhDuaLayer[3][3]]);  //INI-HARUS-BEDA-NamaArrayNYA
 
-      //KEPALA DI MIRINGIN KE KIRI [BAYANGIN ITU TABLE]
+      jsonText = "Frame ke :" + ArrFrame[0][0] + "Layer ke :" + ArrFrame[0][1];  //work 
       
-      //jsonText = "Frame ke :" + ArrInhSatuFrame[0][0] + "Layer ke :" + ArrInhDuaLayer[0][3];
-      jsonText = "Frame ke :" + ArrFrame[0][0] + "Layer ke :" + ArrFrame[0][1]; 
-      //akses ke ArrInhSatuFrame[0][0] = frame0
-      //akses ke ArrInhSatuFrame[0][1] = ArrDataImg[0][3] = z
       /*-------------------------------------------*/ 
 
        var Simg ;
@@ -80,10 +55,6 @@ export class loadJSON {
        AP[3]= "AddArrKeTiga";
        AP[4]= "inherObj";
 
-       
-       //jsonText = JSON.stringify(Simg, AP, "\t"); 
-       //jsonText = memangill; 
-       //jsonText = update_inhObj;
        /*-------------------------------------------*/
 
         mfDua=[//Frame0
@@ -99,10 +70,7 @@ export class loadJSON {
                   "D2-|-Frame1-|-Layer2-|-1-2"
                 ]
               ]; //work
-        /*
-        mfDua.push(2);
-        mfDua[2].push(["f1-layer0","f1-layer1","f1-layer3",]);
-        */
+       
         
         PanggillmfDua=mfDua[0][1];
         console.log(mfDua[1][0]);
@@ -155,39 +123,7 @@ export class loadJSON {
         memberfilter[11] = "arrLima";
         
         
-        //jsonText = JSON.stringify(contact, memberfilter, "\t"); 
-
-        //javascript object yang dijadikan JSON
-        //object apa saja yg di ambil
-        //selang diantara obj satu dengan yg lain
-
-        //document.write(jsonText);
-
-        /* jika data tidak mau berubah coba clear cache browser chrome */
-  
-        /*
-        var x, txt = "";
-
-        for (x in jsonText) {
-            txt += jsonText[x] + " ";
-          };
-        */
-
         return jsonText;
-        //return txt;
     }
   }
-  
-/*
-  export class Model extends Car {
-    constructor(brand, mod) {
-      super(brand);
-      this.model = mod;
-    }
-    show() {
-      return this.present() + ', it is a ' + this.model;
-    }
-  }
-*/
-
   

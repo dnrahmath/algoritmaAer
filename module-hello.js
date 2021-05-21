@@ -1,11 +1,32 @@
 import * as hotkeyPackage from "./module/hotkeys.min.js"; //dapat dipanggil langsung functionnya
 
-import {sayHi} from "./module/say.js";
+//import {sayHi, sayAAAA, sayBBBB} from "./module/say.js";
+import * as say from "./module/say.js";
 import * as constructorSC from "./module/sc-constructor.js";
 import * as jsonSC from "./module/sc-JSON.js";
 //import * as canvasInside from "./module/canvasInside.js";
 
-document.getElementById("outputJs").innerHTML = sayHi("Jhon");
+
+//-START-sayHi------------------------------------------------------------------------------------------------------------------
+
+//import {sayHi} from "./module/say.js";
+document.getElementById("outputJs").innerHTML = say.sayHi("Jhon") + say.sayAAAA("lanj")+ say.sayBBBB("lol");
+
+//-END-sayHi------------------------------------------------------------------------------------------------------------------
+
+
+
+
+//-START-USING-constructorSC------------------------------------------------------------------------------------------------------------------
+
+let mycar = new constructorSC.Model("iniIsianBrand", "iniIsianMod");            //memanggil class dengan input
+document.getElementById("outputJsDua").innerHTML = mycar.show("iniValueIsiLOOOLLL");   //memanggil function didalam class
+
+//-END-USING-constructorSC------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
@@ -14,18 +35,10 @@ document.getElementById("outputJs").innerHTML = sayHi("Jhon");
 let callJson = new jsonSC.loadJSON();            //memanggil class 
 document.getElementById("outputJsTiga").innerHTML = callJson.present();   //memanggil function didalam class
 
-
 //-END-USING-jsonSC------------------------------------------------------------------------------------------------------------------
 
 
 
-//-START-USING-constructorSC------------------------------------------------------------------------------------------------------------------
-
-let mycar = new constructorSC.Model("Ford", "Mustang");            //memanggil class dengan input
-document.getElementById("outputJsDua").innerHTML = mycar.show();   //memanggil function didalam class
-
-
-//-END-USING-constructorSC------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -159,7 +172,7 @@ document.beforeunload = function(e) {
 
 
 //-canvas--------------------------------
-var interval;
+var intervalPertama;
 var canvas = document.getElementById("canvas"); 
 var context = canvas.getContext("2d"); 
 
@@ -187,7 +200,7 @@ function draw() {   // melakukan pengulangan untuk menggambar
 
 };
 
-interval = setInterval(draw, 800 / 60);  // pengulangan teruss
+intervalPertama = setInterval(draw, 800 / 60);  // pengulangan teruss
 //--- End --- Mengupdate canvas secara terus menerus --
 
 
@@ -263,14 +276,17 @@ function statusAwal() {
 
 //--- End --- atas Kondisi
 
+
+
+
 //--- Start --- SimulasiUpdate
 var simulasiPoint = [
-    [0, 48, 72, 96], 
+    [0, 10, 72, 96], 
     [0, 24, 48, 72]
 ];
 
 
-var frame;
+//var frame;
 
 var gelasPoint;
 var langkahPoint;
@@ -279,7 +295,7 @@ var langkahPointSebelum;
 var frameKe;
 var frameSebelum;
 
-var inter; //menyimpan interval
+var intervalKedua; //menyimpan interval
 
 function statusUpdate() {
 
@@ -289,7 +305,7 @@ function statusUpdate() {
         case "satuGelas":
           gelasPoint = 0;
           //--
-          langkahPoint = 2; //pengulangan 0-3 , pakai button NEXT
+          langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
           langkahPointSebelum = langkahPoint - 1;
           //--
           frameKe = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
@@ -299,7 +315,7 @@ function statusUpdate() {
         case "duaGelas":
           gelasPoint = 1;
           //--
-          langkahPoint = 2; //pengulangan 0-3 , pakai button NEXT
+          langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
           langkahPointSebelum = langkahPoint - 1;
           //--
           frameKe = simulasiPoint[gelasPoint][langkahPoint];
@@ -368,11 +384,25 @@ function btnStart() {
 
     function frameLooping() {
 
-        inter = setTimeout(function() {
+        intervalKedua = setTimeout(function() {
 
             console.log(frameSebelum); 
             console.log(i);
+
+            if (i <= 9){
+                i = "000" + i ;
+            }
+
+            else if (i <= 99){
+                i = "00" + i ;
+            }
+
+            else if (i <= 999){
+                i = "0" + i ;
+            }
+
             document.getElementById("frameNumber").innerHTML = i;
+            //img.src = "./images/satuGelas/satuGelas-Frame00"+ i +".png"; //blm di fix
             console.log(frameKe);
             //console.log(simulasiPoint[gelasPoint][langkahPoint]);
 
@@ -393,7 +423,8 @@ document.getElementById("btnStart").onclick = function() {btnStart()};
 
 
 function btnStopReset() {
-    clearInterval(inter);
+    clearInterval(intervalPertama);
+    clearInterval(intervalKedua);
 };
 document.getElementById("btnStopReset").onclick = function() {btnStopReset()};
 
