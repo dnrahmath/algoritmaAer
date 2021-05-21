@@ -1,6 +1,6 @@
+import * as hotkeyPackage from "./module/hotkeys.min.js"; //dapat dipanggil langsung functionnya
+
 import {sayHi} from "./module/say.js";
-import * as hotkeyPackage from "./module/hotkeys.min.js";
-//import * as hotkeySC from "./module/sc-hotkeys.js";  //tidak dapat mengunakan hotkey yg telah di USE 
 import * as constructorSC from "./module/sc-constructor.js";
 import * as jsonSC from "./module/sc-JSON.js";
 //import * as canvasInside from "./module/canvasInside.js";
@@ -137,6 +137,26 @@ document.beforeunload = function(e) {
 */
 
 //-END-USING-Hotkey------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //-canvas--------------------------------
 var interval;
