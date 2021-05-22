@@ -168,14 +168,17 @@ let core = new coreImg.imgClass();            //memanggil class
 
 document.getElementById("btnStart").onclick = function() {
     core.btnStart()
+    //document.getElementById("outputJsTiga").innerHTML = core.statusUpdate();
+    //core.statusAwal()
+    //core.statusUpdate()
 };
 
 
 function mengulangi() {
-    //core.statusAwal()
+    core.statusAwal()
     core.statusUpdate()
 }
-intervalPertama = setInterval(mengulangi, 1000/2);  // pengulangan teruss setiap 0.5 detik
+//intervalPertama = setInterval(mengulangi, 1000/2);  // pengulangan teruss setiap 0.5 detik
 
 //document.getElementById("btnStopReset").onclick = function() {
 //    core.btnStopReset()

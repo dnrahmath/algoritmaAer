@@ -6,74 +6,112 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
       //this.interval
       //this.statusStop = 0
 
-
-
-      //--- Start --- SimulasiUpdate
-      this.simulasiPoint = [
-        [0, 10, 72, 96], 
-        [0, 24, 48, 72]
-      ];
-      this.gelasPoint;
-      this.langkahPoint;
-      this.langkahPointSebelum;
-      
-      this.frameKe;
-      this.frameSebelum;
-      //--- End --- SimulasiUpdate
-
-
-
-      //--- Start --- atas Kondisi
-      this.UjiSave = variabelSave
-      this.varGelasA = "Air Kopi"
-      this.varGelasB = "Air Bening"
-      this.varGelasC = null
-      this.varGelasD = null
-      this.varGelasE = null
-
-      this.data
-      this.dataJson
-      //--- End --- atas Kondisi
-
     }
 
 
 
 
-    statusUpdate() {
-        
+    //--- Start --- atas Kondisi
+    statusAwal() {
         var elemKondisi = document.getElementById("kondisi");
+
+        var varGelasA = "Air Kopi";
+        var varGelasB = "Air Bening";
+        var varGelasC = null;
+        var varGelasD = null;
+        var varGelasE = null;
+
+        var dataStatus;
+        
+        //--- Start --- Options
+        if (elemKondisi.value !== "satuGelas"){  
+    
+            dataStatus = { 
+                kondisGelas : elemKondisi.value,
+                status : {
+                    gelasA: varGelasA,
+                    gelasB: varGelasB,
+                    gelasD: varGelasD,
+                    gelasE: varGelasE
+                }
+            };
+    
+        }
+        else {
+    
+            dataStatus = { 
+                kondisGelas : elemKondisi.value,
+                status : {
+                    gelasA: varGelasA,
+                    gelasB: varGelasB,
+                    gelasC: varGelasC
+                }
+            };
+    
+        }
+        //--- End --- Options
+        //var dataStatusFix = dataStatus;
+        console.log("lol");
+        var dataJsonStatus = JSON.stringify(dataStatusFix, null, 2);
+        //document.getElementById("statusJSON").innerHTML = dataJsonStatus;
+    };
+    //--- End --- atas Kondisi
+      
+
+
+    //--- Start --- SimulasiUpdate
+    statusUpdate() {
+        var elemKondisi = document.getElementById("kondisi");
+
+        var simulasiPoint = [
+            [0, 10, 72, 96], 
+            [0, 24, 48, 72]
+        ];
+
+        var gelasPoint;
+        var langkahPoint;
+        var langkahPointSebelum;
+        
+        var frameKe;
+        var frameSebelum;        
+    
         switch (elemKondisi.value) {
     
             case "satuGelas":
-              this.gelasPoint = 0;
+              gelasPoint = 0;
               //--
-              this.langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
-              this.langkahPointSebelum = this.langkahPoint - 1;
+              langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
+              langkahPointSebelum = langkahPoint - 1;
               //--
-              this.frameKe = this.simulasiPoint[this.gelasPoint][this.langkahPoint]; //mendapatkan tempat berhenti
-              this.frameSebelum = this.simulasiPoint[this.gelasPoint][this.langkahPointSebelum];
+              frameKe = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
+              frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
               break;
     
             case "duaGelas":
-              this.gelasPoint = 1;
+              gelasPoint = 1;
               //--
-              this.langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
-              this.langkahPointSebelum = this.langkahPoint - 1;
+              langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
+              langkahPointSebelum = langkahPoint - 1;
               //--
-              this.frameKe = this.simulasiPoint[this.gelasPoint][this.langkahPoint];
-              this.frameSebelum = this.simulasiPoint[this.gelasPoint][this.langkahPointSebelum];
-          }
-        
-    };
+              frameKe = simulasiPoint[gelasPoint][langkahPoint];
+              frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
+        }
 
+        var dataini = { 
+                        iniframeKe : frameKe,
+                        iniframeSebelum : frameSebelum
+                      };
+        var dataJson = JSON.stringify(dataini, null, 2);
+        document.getElementById("outputJs").innerHTML = dataJson;
+    };
+    // //--- Stop --- SimulasiUpdate
 
 
 
     btnStart() {
         var frameSebelum = 0;
-        var frameKe = 72;
-        //var interval;
+        var frameKe = 138;
+        var interval;
         var i = frameSebelum; //angkaFrame , value array didapatkan lalu disimpan di variabel
     
         function frameLooping() {
