@@ -1,4 +1,4 @@
-  class Model {          //Class Model Memanggil seluruh function pada Class Car
+class imgClass {          //Class Model Memanggil seluruh function pada Class Car
     constructor(variabelSave) {
       //this.elemCanvas = canvasId;
       //this.getContext = contextCanvas;
@@ -32,7 +32,7 @@
     }
   }
   
-  export { Model };
+  export { imgClass };
 
 
 

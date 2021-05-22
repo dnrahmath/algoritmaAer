@@ -21,11 +21,12 @@ class Car {
 class Model extends Car {          //Class Model Memanggil seluruh function pada Class Car
   constructor(brand, mod) {
     super(brand);
-    var valueIsi;
+    //var valueIsi;
+    //var valueIsidua;
     this.model = mod;
     //this.value = valueIsi;
   }
-  show(valueIsi) {
+  show(valueIsi, valueIsidua) {
     return this.present() + ', it is a ' + this.model + '---'+ valueIsi;
   }
 }

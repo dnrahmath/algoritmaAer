@@ -4,7 +4,7 @@ import * as hotkeyPackage from "./module/hotkeys.min.js"; //dapat dipanggil lang
 import * as say from "./module/say.js";
 import * as constructorSC from "./module/sc-constructor.js";
 import * as jsonSC from "./module/sc-JSON.js";
-//import * as canvasInside from "./module/canvasInside.js";
+import * as canvasInside from "./module/canvasInside.js";
 
 
 //-START-sayHi------------------------------------------------------------------------------------------------------------------
@@ -401,7 +401,10 @@ function btnStart() {
                 i = "0" + i ;
             }
 
-            document.getElementById("frameNumber").innerHTML = i;
+            let cordinate = new canvasInside.Model("input ke Model");            //memanggil class 
+            document.getElementById("frameNumber").innerHTML = cordinate.statusAwal("elemK", "status");   //memanggil function didalam class
+
+            //document.getElementById("frameNumber").innerHTML = i;
             //img.src = "./images/satuGelas/satuGelas-Frame00"+ i +".png"; //blm di fix
             console.log(frameKe);
             //console.log(simulasiPoint[gelasPoint][langkahPoint]);
