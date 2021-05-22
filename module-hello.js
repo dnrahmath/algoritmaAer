@@ -170,7 +170,7 @@ document.getElementById("btnStart").onclick = function() {
     core.btnStart()
     //document.getElementById("outputJsTiga").innerHTML = core.statusUpdate();
     //core.statusAwal()
-    //core.statusUpdate()
+    core.statusUpdate()
 };
 
 
