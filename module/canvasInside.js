@@ -25,6 +25,7 @@
     //--- Start --- atas Kondisi
     //function tidak perlu dituliskan kembali didepan
     statusAwal(elemKondisiId, statusJSONId) {
+      //var golang = this.data; tidak bisa
       var golang = 5;  
       //this.data = "empat";
       this.data = golang;
