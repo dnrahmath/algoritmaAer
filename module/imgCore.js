@@ -4,7 +4,24 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
       //this.getContext = contextCanvas;
 
       //this.interval
-      this.statusStop = 0
+      //this.statusStop = 0
+
+
+
+      //--- Start --- SimulasiUpdate
+      this.simulasiPoint = [
+        [0, 10, 72, 96], 
+        [0, 24, 48, 72]
+      ];
+      this.gelasPoint;
+      this.langkahPoint;
+      this.langkahPointSebelum;
+      
+      this.frameKe;
+      this.frameSebelum;
+      //--- End --- SimulasiUpdate
+
+
 
       //--- Start --- atas Kondisi
       this.UjiSave = variabelSave
@@ -19,6 +36,37 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
       //--- End --- atas Kondisi
 
     }
+
+
+
+
+    statusUpdate() {
+        
+        var elemKondisi = document.getElementById("kondisi");
+        switch (elemKondisi.value) {
+    
+            case "satuGelas":
+              this.gelasPoint = 0;
+              //--
+              this.langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
+              this.langkahPointSebelum = this.langkahPoint - 1;
+              //--
+              this.frameKe = this.simulasiPoint[this.gelasPoint][this.langkahPoint]; //mendapatkan tempat berhenti
+              this.frameSebelum = this.simulasiPoint[this.gelasPoint][this.langkahPointSebelum];
+              break;
+    
+            case "duaGelas":
+              this.gelasPoint = 1;
+              //--
+              this.langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
+              this.langkahPointSebelum = this.langkahPoint - 1;
+              //--
+              this.frameKe = this.simulasiPoint[this.gelasPoint][this.langkahPoint];
+              this.frameSebelum = this.simulasiPoint[this.gelasPoint][this.langkahPointSebelum];
+          }
+        
+    };
+
 
 
 

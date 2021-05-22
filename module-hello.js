@@ -170,6 +170,13 @@ document.getElementById("btnStart").onclick = function() {
     core.btnStart()
 };
 
+
+function mengulangi() {
+    //core.statusAwal()
+    core.statusUpdate()
+}
+intervalPertama = setInterval(mengulangi, 1000/2);  // pengulangan teruss setiap 0.5 detik
+
 //document.getElementById("btnStopReset").onclick = function() {
 //    core.btnStopReset()
 //};
