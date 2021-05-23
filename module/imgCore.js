@@ -11,7 +11,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
 
 
-    //--- Start --- atas Kondisi
+    //--- Start --- SimulasiUpdate
     statusAwal() {
         var elemKondisi = document.getElementById("kondisi");
 
@@ -49,14 +49,13 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
             };
     
         }
-        //--- End --- Options
-        //var dataStatusFix = dataStatus;
-        console.log("lol");
-        var dataJsonStatus = JSON.stringify(dataStatusFix, null, 2);
-        //document.getElementById("statusJSON").innerHTML = dataJsonStatus;
+
+        var dataJsonDua = JSON.stringify(dataStatus, null, 2);
+        document.getElementById("statusJSON").innerHTML = dataJsonDua;
     };
-    //--- End --- atas Kondisi
-      
+    //--- Stop --- SimulasiUpdate
+
+
 
 
     //--- Start --- SimulasiUpdate
@@ -104,10 +103,11 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         var dataJson = JSON.stringify(dataini, null, 2);
         document.getElementById("outputJs").innerHTML = dataJson;
     };
-    // //--- Stop --- SimulasiUpdate
+    //--- Stop --- SimulasiUpdate
 
 
 
+    
     btnStart() {
         var frameSebelum = 0;
         var frameKe = 138;
@@ -161,7 +161,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
     //--- Start --- atas Kondisi
     //function tidak perlu dituliskan kembali didepan
-    statusAwal(elemKondisiId, statusJSONId) {
+    statusAwalDefault(elemKondisiId, statusJSONId) {
       var golang = 5;  
       //this.data = "empat";
       this.data = golang;

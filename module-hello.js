@@ -169,7 +169,7 @@ let core = new coreImg.imgClass();            //memanggil class
 document.getElementById("btnStart").onclick = function() {
     core.btnStart()
     //document.getElementById("outputJsTiga").innerHTML = core.statusUpdate();
-    //core.statusAwal()
+    core.statusAwal()
     core.statusUpdate()
 };
 
