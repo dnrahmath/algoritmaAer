@@ -13,14 +13,21 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
 
     //--- Start --- SimulasiUpdate
-    statusAwal() {
+    statusAwal(Q,W,R,T) {
         var elemKondisi = document.getElementById("kondisi");
 
-        var varGelasA = "Air Kopi";
-        var varGelasB = "Air Bening";
-        var varGelasC = null;
-        var varGelasD = null;
-        var varGelasE = null;
+        var varGelasA = Q;
+        var varGelasB = W;
+        var varGelasC = R;
+        var varGelasD = R;
+        var varGelasE = T;
+
+        //var varGelasA = "Air Kopi";
+        //var varGelasB = "Air Bening";
+        //var varGelasC = null;
+        //var varGelasD = null;
+        //var varGelasE = null;
+
 
         var dataStatus;
         
@@ -57,7 +64,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
         var dataJsonStatus = JSON.stringify(dataStatus, null, 2);
         document.getElementById("statusJSON").innerHTML = dataJsonStatus;
-        this.dataJson = dataJsonStatus;
+        //this.dataJson = dataJsonStatus;
     };
     //--- Stop --- SimulasiUpdate
 
@@ -144,6 +151,8 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                 else if (i <= 999){
                     i = "0" + i ;
                 }
+
+                
     
                 //console.log(titikAwal); 
                 //console.log(i);
@@ -159,15 +168,15 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
                 document.getElementById("persenId").value = i;
                 document.getElementById("persenId").max = finishbar;
-                document.getElementById("persenTextId").innerHTML = i / finishbar * 100 + "%";
+                var per = i / finishbar * 100;
+                var sen = per.toString().substr(0,4);
+                document.getElementById("persenTextId").innerHTML = sen + "%";
     
                 i++;
 
                 if (i <= titikAkhir) {
                     frameLooping();
                 }
-
-                //return i;  // tidak usah
     
             }, 1000/6);  // 6 fps
     

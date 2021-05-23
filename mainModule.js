@@ -163,45 +163,45 @@ document.beforeunload = function(e) {
 //-START--ImgCore---------------------------------------------------------------------------------------------------------------
 
 let core = new coreImg.imgClass();            //memanggil class 
-//document.getElementById("outputJsTiga").innerHTML = core.btnStart();   //memanggil function didalam class
-
 
 window.onload = function () {
-    core.statusAwal()
-    core.statusUpdate()
+    core.statusAwal("Air Kopi","Air Bening",null,null);
+    core.statusUpdate();
 };
 
 document.getElementById("kondisi").onchange = function() {
-    core.statusAwal()
+    core.statusAwal("Air Kopi","Air Bening",null,null);
 }
 
 var i = 0;
+var elemKondisi = document.getElementById("kondisi");
 document.getElementById("btnNext").onclick = function() {
-    //var i = 0;
+    
     if (i <= 3) { //3 tidak termasuk
         i = i + 1;
-        core.statusUpdate(i) //disi
-        //console.log(i);
+        core.statusUpdate(i); //disi
+
+        if (elemKondisi.value !== "satuGelas"){
+            switch (i){
+                case 1 : core.statusAwal(null,"Air Bening","&#0189; Air Kopi","&#0189; Air Kopi"); break;
+                case 2 : core.statusAwal("Air Bening",null,"&#0189; Air Kopi","&#0189; Air Kopi"); break;
+                case 3 : core.statusAwal("Air Bening","Air Kopi",null,null);
+            }
+        }
+        else {
+            switch (i){
+                case 1 : core.statusAwal(null,"Air Bening","Air Kopi",null); break;
+                case 2 : core.statusAwal("Air Bening",null,"Air Kopi",null); break;
+                case 3 : core.statusAwal("Air Bening","Air Kopi",null,null);
+            }
+        }
+        
     }
     else {
         location.reload(); 
     }
 
-    core.frameBerjalan()
-    //document.getElementById("outputJsTiga").innerHTML = core.statusUpdate();
-    core.statusAwal()
+    core.frameBerjalan();
 };
-
-
-function mengulangi() {
-    core.statusAwal()
-    core.statusUpdate()
-}
-//intervalPertama = setInterval(mengulangi, 1000/2);  // pengulangan teruss setiap 0.5 detik
-
-//document.getElementById("btnStopReset").onclick = function() {
-//    core.btnStopReset()
-//};
-
 
 //-END--ImgCore---------------------------------------------------------------------------------------------------------------
