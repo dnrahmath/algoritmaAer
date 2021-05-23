@@ -83,6 +83,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
         var frameAwal;
         var frameAkhir;
+        var finish;
     
         switch (elemKondisi.value) {
     
@@ -93,6 +94,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
               //--
               frameAwal = Point[0][titikPointSebelumnya];
               frameAkhir = Point[0][titikPoint]; //mendapatkan tempat berhenti
+              finish = Point[0][3];
               break;
     
             case "duaGelas":
@@ -102,10 +104,11 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
               //--
               frameAwal = Point[1][titikPointSebelumnya];
               frameAkhir = Point[1][titikPoint];
+              finish = Point[1][3];
         }
 
         var dataPoinArray = [ 
-                             frameAwal,frameAkhir
+                             frameAwal,frameAkhir,finish
                             ];
 
         document.getElementById("outputJs").innerHTML = dataPoinArray;
@@ -121,8 +124,10 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
         var titikAwal = this.dataArray[0];
         var titikAkhir = this.dataArray[1];
+        var finishbar = this.dataArray[2];
         var interval;
         var i = titikAwal; //angkaFrame , value array didapatkan lalu disimpan di variabel
+        var persenId;
     
         function frameLooping() {
     
@@ -151,6 +156,10 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                     document.getElementById("frameNumber").innerHTML = i;
                 }
                 //console.log(titikAkhir);
+
+                document.getElementById("persenId").value = i;
+                document.getElementById("persenId").max = finishbar;
+                document.getElementById("persenTextId").innerHTML = i / finishbar * 100 + "%";
     
                 i++;
 
