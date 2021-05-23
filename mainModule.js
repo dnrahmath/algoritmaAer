@@ -164,22 +164,49 @@ document.beforeunload = function(e) {
 
 let core = new coreImg.imgClass();            //memanggil class 
 
+
+
 window.onload = function () {
     core.statusAwal("Air Kopi","Air Bening",null,null);
     core.statusUpdate();
 };
 
+
+
+document.getElementById("btnAccor").onclick = function() {
+    accorFunc('targetAccor');
+};
+var bollean;
+function accorFunc(id) {
+    var target = document.getElementById(id);
+    if (bollean !== true) {
+      target.hidden = false;
+      bollean = true; 
+    } else { 
+      target.hidden = true;
+      bollean = false;
+    }
+}
+
+
+
 document.getElementById("kondisi").onchange = function() {
     core.statusAwal("Air Kopi","Air Bening",null,null);
 }
+
+
+
 
 var i = 0;
 var elemKondisi = document.getElementById("kondisi");
 document.getElementById("btnNext").onclick = function() {
     
-    if (i <= 3) { //3 tidak termasuk
+    if (i <= 2) { //2 termasuk
         i = i + 1;
         core.statusUpdate(i); //disi
+
+        var txt = i.toString().bold();
+        document.getElementById("tahapText").innerHTML = "Hasil dari tahap ke  - " + txt ;
 
         if (elemKondisi.value !== "satuGelas"){
             switch (i){
