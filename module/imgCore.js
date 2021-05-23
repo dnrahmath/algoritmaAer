@@ -1,6 +1,7 @@
 class imgClass {          //Class Model Memanggil seluruh function pada Class Car
-    constructor(variabelSave) {
-      //this.elemCanvas = canvasId;
+    constructor() {
+      this.dataJson;
+      this.dataArray;
       //this.getContext = contextCanvas;
 
       //this.interval
@@ -25,7 +26,9 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         
         //--- Start --- Options
         if (elemKondisi.value !== "satuGelas"){  
-    
+
+            document.getElementById("img").src = "./images/imgFrame/duaGelas/duaGelas-Frame0000.png";
+
             dataStatus = { 
                 kondisGelas : elemKondisi.value,
                 status : {
@@ -38,7 +41,9 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
     
         }
         else {
-    
+
+            document.getElementById("img").src = "./images/imgFrame/satuGelas/satuGelas-Frame0000.png";
+            
             dataStatus = { 
                 kondisGelas : elemKondisi.value,
                 status : {
@@ -50,8 +55,9 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
     
         }
 
-        var dataJsonDua = JSON.stringify(dataStatus, null, 2);
-        document.getElementById("statusJSON").innerHTML = dataJsonDua;
+        var dataJsonStatus = JSON.stringify(dataStatus, null, 2);
+        document.getElementById("statusJSON").innerHTML = dataJsonStatus;
+        this.dataJson = dataJsonStatus;
     };
     //--- Stop --- SimulasiUpdate
 
@@ -59,60 +65,64 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
 
     //--- Start --- SimulasiUpdate
-    statusUpdate() {
+    //--- Start --- SimulasiUpdate
+
+    //--- Start --- SimulasiUpdate
+    statusUpdate(bertambah) {
         var elemKondisi = document.getElementById("kondisi");
 
-        var simulasiPoint = [
-            [0, 10, 72, 96], 
-            [0, 24, 48, 72]
+        var Point = [
+            [0, 48, 90, 138], 
+            [0, 70, 112, 166]
         ];
 
-        var gelasPoint;
-        var langkahPoint;
-        var langkahPointSebelum;
-        
-        var frameKe;
-        var frameSebelum;        
+        var titikPoint = bertambah ;  //btnNext
+        console.log(titikPoint);
+        var titikPointSebelumnya = titikPoint - 1;  //sudah otomatis nanti terisi
+        console.log(titikPointSebelumnya);
+
+        var frameAwal;
+        var frameAkhir;
     
         switch (elemKondisi.value) {
     
             case "satuGelas":
-              gelasPoint = 0;
               //--
-              langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
-              langkahPointSebelum = langkahPoint - 1;
+              //titikPoint = 1; //pengulangan 0-3 , pakai button NEXT
+              //titikPointSebelumnya = titikPoint - 1;
               //--
-              frameKe = simulasiPoint[gelasPoint][langkahPoint]; //mendapatkan tempat berhenti
-              frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
+              frameAwal = Point[0][titikPointSebelumnya];
+              frameAkhir = Point[0][titikPoint]; //mendapatkan tempat berhenti
               break;
     
             case "duaGelas":
-              gelasPoint = 1;
               //--
-              langkahPoint = 1; //pengulangan 0-3 , pakai button NEXT
-              langkahPointSebelum = langkahPoint - 1;
+              //titikPoint = 1; //pengulangan 0-3 , pakai button NEXT
+              //titikPointSebelumnya = titikPoint - 1;
               //--
-              frameKe = simulasiPoint[gelasPoint][langkahPoint];
-              frameSebelum = simulasiPoint[gelasPoint][langkahPointSebelum];
+              frameAwal = Point[1][titikPointSebelumnya];
+              frameAkhir = Point[1][titikPoint];
         }
 
-        var dataini = { 
-                        iniframeKe : frameKe,
-                        iniframeSebelum : frameSebelum
-                      };
-        var dataJson = JSON.stringify(dataini, null, 2);
-        document.getElementById("outputJs").innerHTML = dataJson;
+        var dataPoinArray = [ 
+                             frameAwal,frameAkhir
+                            ];
+
+        document.getElementById("outputJs").innerHTML = dataPoinArray;
+        this.dataArray = dataPoinArray;
     };
     //--- Stop --- SimulasiUpdate
 
 
 
     
-    btnStart() {
-        var frameSebelum = 0;
-        var frameKe = 138;
+    frameBerjalan() {
+        var elemKondisi = document.getElementById("kondisi");
+
+        var titikAwal = this.dataArray[0];
+        var titikAkhir = this.dataArray[1];
         var interval;
-        var i = frameSebelum; //angkaFrame , value array didapatkan lalu disimpan di variabel
+        var i = titikAwal; //angkaFrame , value array didapatkan lalu disimpan di variabel
     
         function frameLooping() {
     
@@ -130,15 +140,21 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                     i = "0" + i ;
                 }
     
-                console.log(frameSebelum); 
-                console.log(i);
-                document.getElementById("img").src = "./images/imgFrame/satuGelas/satuGelas-Frame"+i+".png";
-                document.getElementById("frameNumber").innerHTML = i;
-                console.log(frameKe);
+                //console.log(titikAwal); 
+                //console.log(i);
+                if (elemKondisi.value !== "satuGelas"){
+                    document.getElementById("img").src = "./images/imgFrame/duaGelas/duaGelas-Frame"+i+".png";
+                    document.getElementById("frameNumber").innerHTML = i;
+                }
+                else {
+                    document.getElementById("img").src = "./images/imgFrame/satuGelas/satuGelas-Frame"+i+".png";
+                    document.getElementById("frameNumber").innerHTML = i;
+                }
+                //console.log(titikAkhir);
     
                 i++;
 
-                if (i <= frameKe) {
+                if (i <= titikAkhir) {
                     frameLooping();
                 }
 
@@ -167,6 +183,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
       this.data = golang;
       return elemKondisiId + ', it is a ' + statusJSONId + " " + this.UjiSave + " " + this.data +golang;
     }
+
   }
   
   export { imgClass };

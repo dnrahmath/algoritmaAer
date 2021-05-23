@@ -94,16 +94,16 @@
         height: 100%;   /* https://stackoverflow.com/questions/1575141/how-to-make-a-div-100-height-of-the-browser-window  100%!=100vh */
         /* 435px */
         width: 100%;
-        background-color: #fffb00; /*alat bantu penanda [Lokasi]*/
-        border: 3px solid black;
+        /*background-color: #fffb00; /*alat bantu penanda [Lokasi]*/
+        /*border: 3px solid black;*/
     }
     /* karena beda tag maka muncul kesenjangan antara  <main><div class="content-tengah"></div></main>  dengan  <footer><div class="content-bawah"></div></footer>  */
     
     .content-bawah {  /* dieksekusi Ketiga [3] */
         padding-top: 1px; /* supaya menghilangkan garis putih */
         height: 835px;    /* 200px + 435px */
-        background-color: #48ff00; /*alat bantu penanda [Lokasi]*/
-        border: 3px dashed black;
+        /*background-color: #48ff00; /*alat bantu penanda [Lokasi]*/
+        /*border: 3px dashed black;*/
     }
     
     /* ------------------------------------------------------------------------------------------------ */
@@ -112,14 +112,16 @@
         float: left;
         width: 60%;
         height: 100%; /* 100% horizontal dari ukuran didalam <tag> */
-        background-color: #ffad7e;
+        /*background-color: #ffad7e;*/
+        background-color: #c9c9c9;
     }
     
     .col-right{       /* dibelakang contentnya {1} */
         float: right;
         width: 40%;
         height: 100%; /* 100% horizontal dari ukuran didalam <tag> */
-        background-color: #e3ff7e;
+        /*background-color: #e3ff7e;*/
+        background-color: #c9c9c9;
     }
 
     /* ------------------------------------------------------------------------------------------------ */
@@ -152,7 +154,7 @@
     
     .cR-bawah {  /* mengatur <div> ke <section> [1] */ 
         overflow: hidden;
-        background-color: #333; /*alat bantu penanda*/
+        /*background-color: #333; /*alat bantu penanda*/
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -165,6 +167,7 @@
         width: 100%;
         /*background-color: #cde1ff;*/
         text-align: center;
+        border: 3px solid #c9c9c9;
         
         /*
         margin-top: -15px;

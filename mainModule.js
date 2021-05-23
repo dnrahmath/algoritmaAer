@@ -166,11 +166,30 @@ let core = new coreImg.imgClass();            //memanggil class
 //document.getElementById("outputJsTiga").innerHTML = core.btnStart();   //memanggil function didalam class
 
 
-document.getElementById("btnStart").onclick = function() {
-    core.btnStart()
-    //document.getElementById("outputJsTiga").innerHTML = core.statusUpdate();
+window.onload = function () {
     core.statusAwal()
     core.statusUpdate()
+};
+
+document.getElementById("kondisi").onchange = function() {
+    core.statusAwal()
+}
+
+var i = 0;
+document.getElementById("btnNext").onclick = function() {
+    //var i = 0;
+    if (i <= 3) { //3 tidak termasuk
+        i = i + 1;
+        core.statusUpdate(i) //disi
+        //console.log(i);
+    }
+    else {
+        location.reload(); 
+    }
+
+    core.frameBerjalan()
+    //document.getElementById("outputJsTiga").innerHTML = core.statusUpdate();
+    core.statusAwal()
 };
 
 
