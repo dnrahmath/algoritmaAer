@@ -2,11 +2,6 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
     constructor() {
       this.dataJson;
       this.dataArray;
-      //this.getContext = contextCanvas;
-
-      //this.interval
-      //this.statusStop = 0
-
     }
 
 
@@ -21,13 +16,6 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         var varGelasC = R;
         var varGelasD = R;
         var varGelasE = T;
-
-        //var varGelasA = "Air Kopi";
-        //var varGelasB = "Air Bening";
-        //var varGelasC = null;
-        //var varGelasD = null;
-        //var varGelasE = null;
-
 
         var dataStatus;
         
@@ -72,7 +60,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
 
     //--- Start --- SimulasiUpdate
-    //--- Start --- SimulasiUpdate
+    //--- Stop --- SimulasiUpdate
 
     //--- Start --- SimulasiUpdate
     statusUpdate(bertambah) {
@@ -84,9 +72,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         ];
 
         var titikPoint = bertambah ;  //btnNext
-        console.log(titikPoint);
         var titikPointSebelumnya = titikPoint - 1;  //sudah otomatis nanti terisi
-        console.log(titikPointSebelumnya);
 
         var frameAwal;
         var frameAkhir;
@@ -95,20 +81,12 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         switch (elemKondisi.value) {
     
             case "satuGelas":
-              //--
-              //titikPoint = 1; //pengulangan 0-3 , pakai button NEXT
-              //titikPointSebelumnya = titikPoint - 1;
-              //--
               frameAwal = Point[0][titikPointSebelumnya];
               frameAkhir = Point[0][titikPoint]; //mendapatkan tempat berhenti
               finish = Point[0][3];
               break;
     
             case "duaGelas":
-              //--
-              //titikPoint = 1; //pengulangan 0-3 , pakai button NEXT
-              //titikPointSebelumnya = titikPoint - 1;
-              //--
               frameAwal = Point[1][titikPointSebelumnya];
               frameAkhir = Point[1][titikPoint];
               finish = Point[1][3];
@@ -153,9 +131,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                 }
 
                 
-    
-                //console.log(titikAwal); 
-                //console.log(i);
+
                 if (elemKondisi.value !== "satuGelas"){
                     document.getElementById("img").src = "./images/imgFrame/duaGelas/duaGelas-Frame"+i+".png";
                     document.getElementById("frameNumber").innerHTML = i;
@@ -164,7 +140,6 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                     document.getElementById("img").src = "./images/imgFrame/satuGelas/satuGelas-Frame"+i+".png";
                     document.getElementById("frameNumber").innerHTML = i;
                 }
-                //console.log(titikAkhir);
 
                 document.getElementById("persenId").value = i;
                 document.getElementById("persenId").max = finishbar;
@@ -187,24 +162,9 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
     };
 
 
-    //btnStopReset() {
-    //    clearInterval(interval);
-    //};
-
-
-
-    //--- Start --- atas Kondisi
-    //function tidak perlu dituliskan kembali didepan
-    statusAwalDefault(elemKondisiId, statusJSONId) {
-      var golang = 5;  
-      //this.data = "empat";
-      this.data = golang;
-      return elemKondisiId + ', it is a ' + statusJSONId + " " + this.UjiSave + " " + this.data +golang;
-    }
-
-  }
+};
   
-  export { imgClass };
+export { imgClass };
 
 
 
