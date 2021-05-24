@@ -8,14 +8,14 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
 
     //--- Start --- SimulasiUpdate
-    statusAwal(Q,W,R,T) {
+    statusAwal(Q,W,R) {
         var elemKondisi = document.getElementById("kondisi");
 
         var varGelasA = Q;
         var varGelasB = W;
         var varGelasC = R;
         var varGelasD = R;
-        var varGelasE = T;
+        var varGelasE = R;
 
         var dataStatus;
         

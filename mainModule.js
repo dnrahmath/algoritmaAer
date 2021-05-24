@@ -12,32 +12,31 @@ let core = new coreImg.imgClass();            //memanggil class
 window.onload = function () {
     core.statusAwal("Air Kopi","Air Bening",null,null);
     core.statusUpdate();
+    document.getElementById('targetAccor').hidden = false;
 };
-
 
 
 document.getElementById("btnAccor").onclick = function() {
     accorFunc('targetAccor');
 };
+
+//var bollean = false; // secara default
 var bollean;
 function accorFunc(id) {
-    var target = document.getElementById(id);
-    if (bollean !== true) {
-      target.hidden = false;
-      bollean = true; 
+    var targetElemen = document.getElementById(id);
+    if (bollean === true) {
+      targetElemen.hidden = false;
+      bollean = false; 
     } else { 
-      target.hidden = true;
-      bollean = false;
+      targetElemen.hidden = true;
+      bollean = true;
     }
 }
-
 
 
 document.getElementById("kondisi").onchange = function() {
     core.statusAwal("Air Kopi","Air Bening",null,null);
 }
-
-
 
 
 var i = 0;
@@ -53,16 +52,16 @@ document.getElementById("btnNext").onclick = function() {
 
         if (elemKondisi.value !== "satuGelas"){
             switch (i){
-                case 1 : core.statusAwal(null,"Air Bening","&#0189; Air Kopi","&#0189; Air Kopi"); break;
-                case 2 : core.statusAwal("Air Bening",null,"&#0189; Air Kopi","&#0189; Air Kopi"); break;
-                case 3 : core.statusAwal("Air Bening","Air Kopi",null,null);
+                case 1 : core.statusAwal(null,"Air Bening","&#0189; Air Kopi"); break;
+                case 2 : core.statusAwal("Air Bening",null,"&#0189; Air Kopi"); break;
+                case 3 : core.statusAwal("Air Bening","Air Kopi",null);
             }
         }
         else {
             switch (i){
-                case 1 : core.statusAwal(null,"Air Bening","Air Kopi",null); break;
-                case 2 : core.statusAwal("Air Bening",null,"Air Kopi",null); break;
-                case 3 : core.statusAwal("Air Bening","Air Kopi",null,null);
+                case 1 : core.statusAwal(null,"Air Bening","Air Kopi"); break;
+                case 2 : core.statusAwal("Air Bening",null,"Air Kopi"); break;
+                case 3 : core.statusAwal("Air Bening","Air Kopi",null);
             }
         }
         
