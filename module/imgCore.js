@@ -96,7 +96,14 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                              frameAwal,frameAkhir,finish
                             ];
 
-        document.getElementById("outputJs").innerHTML = dataPoinArray;
+        var dataPoin = { 
+                          "frameAwal" : frameAwal,
+                          "frameAkhir" : frameAkhir,
+                          "finish" : finish
+                        };
+
+        var dataPoinJson = JSON.stringify(dataPoin, null, 2);
+        document.getElementById("outputJs").innerHTML = dataPoinJson;
         this.dataArray = dataPoinArray;
     };
     //--- Stop --- SimulasiUpdate

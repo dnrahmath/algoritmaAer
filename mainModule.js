@@ -66,6 +66,7 @@ document.getElementById("btnNext").onclick = function() {
         }
         
     }
+    
     else {
         location.reload(); 
     }
@@ -74,6 +75,10 @@ document.getElementById("btnNext").onclick = function() {
 };
 
 //-END--ImgCore---------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
