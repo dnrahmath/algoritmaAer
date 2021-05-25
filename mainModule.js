@@ -10,17 +10,18 @@ let core = new coreImg.imgClass();            //memanggil class
 
 
 window.onload = function () {
+    document.getElementById('targetAccor').hidden = false;
     core.statusAwal("Air Kopi","Air Bening",null,null);
     core.statusUpdate();
-    document.getElementById('targetAccor').hidden = false;
 };
+
 
 
 document.getElementById("btnAccor").onclick = function() {
     accorFunc('targetAccor');
 };
 
-//var bollean = false; // secara default
+//var bollean = false; // default  FAQ
 var bollean;
 function accorFunc(id) {
     var targetElemen = document.getElementById(id);
@@ -31,12 +32,14 @@ function accorFunc(id) {
       targetElemen.hidden = true;
       bollean = true;
     }
-}
+};
+
 
 
 document.getElementById("kondisi").onchange = function() {
-    core.statusAwal("Air Kopi","Air Bening",null,null);
-}
+    core.statusAwal("Air Kopi","Air Bening",null,null);  //terdapat perubahan data di internal functionnya
+};
+
 
 
 var i = 0;
@@ -45,7 +48,7 @@ document.getElementById("btnNext").onclick = function() {
     
     if (i <= 2) { //2 termasuk
         i = i + 1;
-        core.statusUpdate(i); //disi
+        core.statusUpdate(i); //disi berdasarkan angka yang terinput
 
         var txt = i.toString().bold();
         document.getElementById("tahapText").innerHTML = "Hasil dari Tahap ke  - " + txt ;
@@ -71,7 +74,10 @@ document.getElementById("btnNext").onclick = function() {
         location.reload(); 
     }
 
+
     core.frameBerjalan();
+
+    
 };
 
 //-END--ImgCore---------------------------------------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 class imgClass {          //Class Model Memanggil seluruh function pada Class Car
     constructor() {
-      this.dataJson;
+      //this.dataJson;
       this.dataArray;
     }
 
@@ -119,7 +119,6 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         var finishbar = this.dataArray[2];
         var interval;
         var i = titikAwal; //angkaFrame , value array didapatkan lalu disimpan di variabel
-        var persenId;
     
         function frameLooping() {
     

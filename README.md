@@ -23,6 +23,8 @@ _{-- Input type=module - Import - Export Class --}_
 <br>
 [ 3 ] Pemanggilan Function setelah Class dideklarasikan
 <br>
+_{-- new importName.className().functName(); --}_
+<br>
 <br>
 [ 4 ] Manipulasi HTML DOM(Document Object Model) dengan Javascript
 <br>
