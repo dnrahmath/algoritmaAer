@@ -48,7 +48,7 @@ document.getElementById("btnNext").onclick = function() {
         core.statusUpdate(i); //disi
 
         var txt = i.toString().bold();
-        document.getElementById("tahapText").innerHTML = "Hasil dari tahap ke  - " + txt ;
+        document.getElementById("tahapText").innerHTML = "Hasil dari Tahap ke  - " + txt ;
 
         if (elemKondisi.value !== "satuGelas"){
             switch (i){

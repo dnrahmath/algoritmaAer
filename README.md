@@ -29,3 +29,8 @@ _{-- Input type=module - Import - Export Class --}_
 _{-- getElementById() --}_
 <br>
 <br>
+[ 5 ] Pergerakan Data
+<br>
+_{-- constructor-variabel-Array-JSON --}_
+<br>
+<br>
