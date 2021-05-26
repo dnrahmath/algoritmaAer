@@ -8,9 +8,13 @@ import * as hotkeyPackage from "./module/hotkeys.min.js"; //dapat dipanggil lang
 let core = new coreImg.imgClass();            //memanggil class 
 
 
-
+let i = 0;
 window.onload = function () {
     document.getElementById('targetAccor').hidden = false;
+
+    var txt = i.toString().bold();
+    document.getElementById("tahapText").innerHTML = "Hasil dari Tahap ke  - " + txt + " : ";
+
     core.statusAwal("Air Kopi","Air Bening",null,null);
     core.statusUpdate();
 };
@@ -42,7 +46,7 @@ document.getElementById("kondisi").onchange = function() {
 
 
 
-var i = 0;
+
 var elemKondisi = document.getElementById("kondisi");
 document.getElementById("btnNext").onclick = function() {
     
