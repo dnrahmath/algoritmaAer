@@ -8,7 +8,7 @@ import * as hotkeyPackage from "./module/hotkeys.min.js"; //dapat dipanggil lang
 let core = new coreImg.imgClass();            //memanggil class 
 
 
-let i = 0;
+var i = 0;     //untuk awal2 jangan terlalu mempermasalkan var, let, const soalnya ini berkaitan dengan Javascript ES6
 window.onload = function () {
     document.getElementById('targetAccor').hidden = false;
 
@@ -23,7 +23,7 @@ window.onload = function () {
 
 
 document.getElementById("tahapText").onclick = function() {
-    accorFunc('targetAccor');
+    //accorFunc('targetAccor');
 };
 
 document.getElementById("btnAccor").onclick = function() {
