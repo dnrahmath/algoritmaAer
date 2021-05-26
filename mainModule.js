@@ -45,6 +45,7 @@ function accorFunc(id) {
 
 
 
+
 document.getElementById("kondisi").onchange = function() {
     core.statusAwal("Air Kopi","Air Bening",null,null);  //terdapat perubahan data di internal functionnya
 };
