@@ -21,6 +21,11 @@ window.onload = function () {
 
 
 
+
+document.getElementById("tahapText").onclick = function() {
+    accorFunc('targetAccor');
+};
+
 document.getElementById("btnAccor").onclick = function() {
     accorFunc('targetAccor');
 };
@@ -55,7 +60,7 @@ document.getElementById("btnNext").onclick = function() {
         core.statusUpdate(i); //disi berdasarkan angka yang terinput
 
         var txt = i.toString().bold();
-        document.getElementById("tahapText").innerHTML = "Hasil dari Tahap ke  - " + txt ;
+        document.getElementById("tahapText").innerHTML = "Hasil dari Tahap ke  - " + txt + " : ";
 
         if (elemKondisi.value !== "satuGelas"){
             switch (i){
