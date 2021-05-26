@@ -105,7 +105,7 @@ document.getElementById("btnNext").onclick = function() {
 hotkeys('space', function(event,handler){
 
     accorFunc('targetAccor');
-    console.log('Key yang ditekan :', hotkeys.getPressedKeyCodes());
+    console.log('Key yang ditekan :' , hotkeys.getPressedKeyCodes());  // , +
 
 });
 
