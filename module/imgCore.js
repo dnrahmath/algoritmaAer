@@ -1,13 +1,16 @@
 class imgClass {          //Class Model Memanggil seluruh function pada Class Car
     constructor() {
-      //this.dataJson;
+
       this.dataArray;
+
     }
 
 
 
 
-    //--- Start --- SimulasiUpdate
+
+
+    //--- Start --- statusAwal() ---
     statusAwal(Q,W,R) {
         var elemKondisi = document.getElementById("kondisi");
 
@@ -52,17 +55,16 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
         var dataJsonStatus = JSON.stringify(dataStatus, null, 2);
         document.getElementById("statusJSON").innerHTML = dataJsonStatus;
-        //this.dataJson = dataJsonStatus;
+        
     };
-    //--- Stop --- SimulasiUpdate
+    //--- STOP --- statusAwal() ---
 
 
 
 
-    //--- Start --- SimulasiUpdate
-    //--- Stop --- SimulasiUpdate
 
-    //--- Start --- SimulasiUpdate
+
+    //--- START --- statusUpdate() ---
     statusUpdate(bertambah) {
         var elemKondisi = document.getElementById("kondisi");
 
@@ -105,12 +107,16 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         var dataPoinJson = JSON.stringify(dataPoin, null, 2);
         document.getElementById("outputJs").innerHTML = dataPoinJson;
         this.dataArray = dataPoinArray;
+
     };
-    //--- Stop --- SimulasiUpdate
+    //--- STOP --- statusUpdate() ---
 
 
 
-    
+
+
+
+    //--- START --- frameBerjalan() ---
     frameBerjalan() {
         var elemKondisi = document.getElementById("kondisi");
 
@@ -166,6 +172,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         frameLooping();
 
     };
+    //--- STOP --- frameBerjalan() ---
 
 
 };
