@@ -81,7 +81,7 @@ document.getElementById("btnNext").onclick = function() {
     }
     
     else {
-        location.reload(); 
+        //location.reload(); 
     }
 
 
