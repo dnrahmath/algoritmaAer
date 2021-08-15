@@ -22,6 +22,49 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
         var dataStatus;
         
+        
+        var ImgSrc_satuGelas = [ 'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0001.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0002.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0003.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0004.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0005.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0006.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0007.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0008.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0009.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0010.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0011.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0012.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0013.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0014.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0015.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0016.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0017.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0018.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0019.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0020.png' ,  
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0021.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0022.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0023.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0024.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0025.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0026.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0027.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0028.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0029.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0030.png' ,  
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0031.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0032.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0033.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0034.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0035.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0036.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0037.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0038.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0039.png' , 
+                                       'https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0040.png' 
+                                     ];
+        
         //--- Start --- Options
         if (elemKondisi.value !== "satuGelas"){  
 
@@ -130,6 +173,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
     
             interval = setTimeout(function() {
 
+                /*
                 if (i <= 9){
                     i = "000" + i ;
                 }
@@ -141,11 +185,13 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                 else if (i <= 999){
                     i = "0" + i ;
                 }
+                */
 
                 
 
                 if (elemKondisi.value !== "satuGelas"){
-                    document.getElementById("img").src = "./images/imgFrame/duaGelas/duaGelas-Frame"+i+".png";
+                    //document.getElementById("img").src = "./images/imgFrame/duaGelas/duaGelas-Frame"+i+".png";
+                    document.getElementById("img").src = ImgSrc_satuGelas[i];
                     document.getElementById("frameNumber").innerHTML = i;
                 }
                 else {
