@@ -168,7 +168,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                     frameLooping();
                 }
     
-            }, 900);  // 0.75 fps
+            }, 5000);  // 0.75 fps
     
         }
     
