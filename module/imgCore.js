@@ -191,7 +191,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
 
                 if (elemKondisi.value !== "satuGelas"){
                     //document.getElementById("img").src = "./images/imgFrame/duaGelas/duaGelas-Frame"+i+".png";
-                    document.getElementById("img").src = ImgSrc_satuGelas[i];
+                    //document.getElementById("img").src = ImgSrc_satuGelas[i];
                     document.getElementById("frameNumber").innerHTML = i;
                 }
                 else {
