@@ -25,7 +25,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         //--- Start --- Options
         if (elemKondisi.value !== "satuGelas"){  
 
-            document.getElementById("img").src = "https://dnrahmath.github.io/algoritmaAer/images/imgFrame/duaGelas/duaGelas-Frame0000.png";
+            document.getElementById("img").src = "./images/imgFrame/duaGelas/duaGelas-Frame0000.png";
 
             dataStatus = { 
                 kondisGelas : elemKondisi.value,
@@ -40,7 +40,7 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
         }
         else {
 
-            document.getElementById("img").src = "https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame0000.png";
+            document.getElementById("img").src = "./images/imgFrame/satuGelas/satuGelas-Frame0000.png";
             
             dataStatus = { 
                 kondisGelas : elemKondisi.value,
@@ -145,11 +145,11 @@ class imgClass {          //Class Model Memanggil seluruh function pada Class Ca
                 
 
                 if (elemKondisi.value !== "satuGelas"){
-                    document.getElementById("img").src = "https://dnrahmath.github.io/algoritmaAer/images/imgFrame/duaGelas/duaGelas-Frame"+i+".png";
+                    document.getElementById("img").src = "./images/imgFrame/duaGelas/duaGelas-Frame"+i+".png";
                     document.getElementById("frameNumber").innerHTML = i;
                 }
                 else {
-                    document.getElementById("img").src = "https://dnrahmath.github.io/algoritmaAer/images/imgFrame/satuGelas/satuGelas-Frame"+i+".png";
+                    document.getElementById("img").src = "./images/imgFrame/satuGelas/satuGelas-Frame"+i+".png";
                     document.getElementById("frameNumber").innerHTML = i;
                 }
 
